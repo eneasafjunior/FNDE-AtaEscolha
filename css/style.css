@@ -9,7 +9,8 @@
   --bg-body: #f4f6f8;
 }
 
-html, body {
+html,
+body {
   background-color: var(--bg-body);
   display: flex;
   flex-direction: column;
@@ -1654,6 +1655,7 @@ h4#instruction-title {
 .matriz-secao {
   margin-bottom: 2rem;
 }
+
 .matriz-secao-header {
   font-size: 1.125rem;
   font-weight: 600;
@@ -1663,6 +1665,7 @@ h4#instruction-title {
   border-radius: 4px;
   margin-bottom: 1rem;
 }
+
 .matriz-item {
   display: flex;
   justify-content: space-between;
@@ -1670,16 +1673,19 @@ h4#instruction-title {
   padding: 16px 8px;
   border-bottom: 1px solid #eaeaea;
 }
+
 .matriz-item-texto {
   font-size: 0.95rem;
   color: #333;
   flex: 1;
   padding-right: 20px;
 }
+
 .matriz-item-ratings {
   display: flex;
   gap: 8px;
 }
+
 .rating-btn {
   background-color: #fff;
   border: 1px solid #ccc;
@@ -1695,10 +1701,12 @@ h4#instruction-title {
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
 .rating-btn:hover {
   border-color: #1351b4;
   color: #1351b4;
 }
+
 .rating-btn.active {
   background-color: #1351b4;
   border-color: #1351b4;
@@ -1711,21 +1719,26 @@ body.dark-mode .matriz-secao-header {
   background-color: #1a2f50;
   color: #8bb3f9;
 }
+
 body.dark-mode .matriz-item {
   border-bottom-color: #333;
 }
+
 body.dark-mode .matriz-item-texto {
   color: #ddd;
 }
+
 body.dark-mode .rating-btn {
   background-color: #222;
   border-color: #555;
   color: #bbb;
 }
+
 body.dark-mode .rating-btn:hover {
   border-color: #8bb3f9;
   color: #8bb3f9;
 }
+
 body.dark-mode .rating-btn.active {
   background-color: #4184f3;
   border-color: #4184f3;
@@ -1737,11 +1750,13 @@ body.dark-mode .rating-btn.active {
   margin-left: -8px !important;
   margin-right: -8px !important;
 }
+
 #step-content-1 [class*="col-"] {
   padding-left: 8px !important;
   padding-right: 8px !important;
   margin-bottom: 15px !important;
 }
+
 #step-content-1 label {
   display: block !important;
   margin-bottom: 8px !important;
@@ -1751,24 +1766,28 @@ body.dark-mode .rating-btn.active {
   text-align: left !important;
   width: 100% !important;
 }
+
 .form-control {
   font-family: inherit !important;
   font-size: 14px !important;
   border: 1px solid #ccc !important;
   border-radius: 4px !important;
-  height: 40px !important;
+  height: 100% !important;
   padding: 8px 12px !important;
   box-sizing: border-box !important;
   display: block !important;
   width: 100% !important;
 }
+
 .input-icon-container {
   position: relative;
   width: 100%;
 }
+
 .input-icon-container .form-control {
   padding-left: 36px !important;
 }
+
 .input-icon-container.right-icon .form-control {
   padding-left: 12px !important;
   padding-right: 36px !important;
@@ -1788,6 +1807,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   padding: 0 !important;
   z-index: 2;
 }
+
 .input-icon-container .input-icon-left {
   position: absolute;
   left: 12px;
@@ -1798,6 +1818,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   pointer-events: none;
   z-index: 1;
 }
+
 .input-icon-container .input-icon-right {
   position: absolute;
   right: 12px;
@@ -1846,6 +1867,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   gap: 8px;
   transition: all 0.2s ease;
 }
+
 .btn-adicionar-participante:hover {
   background-color: rgba(19, 81, 180, 0.08);
 }
@@ -1857,6 +1879,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
 .table-participantes th {
   text-align: left;
   padding: 10px 12px;
@@ -1866,12 +1889,14 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   font-size: 13px;
   border-bottom: 2px solid #1351b4;
 }
+
 .table-participantes td {
   padding: 12px;
   font-size: 14px;
   border-bottom: 1px solid #eee;
   color: #333;
 }
+
 .btn-excluir-part {
   background: transparent;
   border: none;
@@ -1880,6 +1905,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   font-size: 16px;
   padding: 4px;
 }
+
 .btn-excluir-part:hover {
   color: #d93838;
 }
@@ -1897,6 +1923,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   justify-content: center;
   z-index: 9999;
 }
+
 .confirm-modal-box {
   background-color: #fff;
   border-radius: 8px;
@@ -1911,34 +1938,42 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 body.dark-mode #step-content-1 label {
   color: #ddd !important;
 }
+
 body.dark-mode .form-control:disabled {
   background-color: #2a2a2a !important;
   color: #aaa !important;
   border-color: #444 !important;
 }
+
 body.dark-mode .table-participantes th {
   background-color: #1a2f50;
   color: #8bb3f9;
   border-bottom-color: #8bb3f9;
 }
+
 body.dark-mode .table-participantes td {
   color: #ddd;
   border-bottom-color: #333;
 }
+
 body.dark-mode .confirm-modal-box {
   background-color: #1e1e1e;
   color: #fff;
 }
+
 body.dark-mode .confirm-modal-box p {
   color: #fff !important;
 }
+
 body.dark-mode .confirm-modal-box i {
   color: #ffcd07 !important;
 }
+
 body.dark-mode .btn-adicionar-participante {
   border-color: #8bb3f9;
   color: #8bb3f9;
 }
+
 body.dark-mode .btn-adicionar-participante:hover {
   background-color: rgba(139, 179, 249, 0.08);
 }
@@ -1948,15 +1983,19 @@ body.dark-mode .warning-message-bg {
   background-color: #1a2333 !important;
   border-bottom: 1px solid #2a3b5c !important;
 }
+
 body.dark-mode .warning-message-bg h4 {
   color: #ffffff !important;
 }
+
 body.dark-mode .warning-message-bg p {
   color: #cccccc !important;
 }
+
 body.dark-mode .warning-message-bg span {
   color: #aaaaaa !important;
 }
+
 body.dark-mode .warning-message-bg i.far.fa-clock {
   color: #aaaaaa !important;
 }
@@ -1966,11 +2005,14 @@ body.dark-mode .warning-message-bg i.far.fa-clock {
   margin-bottom: 8px !important;
   color: #333;
 }
-#previa-ata-content h3, #previa-ata-content h4 {
+
+#previa-ata-content h3,
+#previa-ata-content h4 {
   color: #1351b4;
   margin-top: 16px;
   margin-bottom: 12px;
 }
+
 #previa-ata-content ul {
   padding-left: 20px;
   margin-bottom: 12px;
@@ -1981,30 +2023,37 @@ body.dark-mode #modal-previa-ata .confirm-modal-box {
   background-color: #1e1e1e !important;
   color: #e1e1e6 !important;
 }
+
 body.dark-mode #modal-previa-ata h2 {
   color: #ffffff !important;
 }
+
 body.dark-mode #previa-ata-content p {
   color: #e1e1e6 !important;
 }
-body.dark-mode #previa-ata-content h3, body.dark-mode #previa-ata-content h4 {
+
+body.dark-mode #previa-ata-content h3,
+body.dark-mode #previa-ata-content h4 {
   color: #8bb3f9 !important;
 }
+
 body.dark-mode #modal-previa-ata button#btn-fechar-previa-top {
   color: #8bb3f9 !important;
 }
 
 /* --- ESTILOS DE IMPRESSÃO (PDF DESIGN) --- */
 @media print {
+
   /* Oculta tudo que não faz parte da impressão */
   body * {
     visibility: hidden !important;
   }
-  
-  #printable-ata, #printable-ata * {
+
+  #printable-ata,
+  #printable-ata * {
     visibility: visible !important;
   }
-  
+
   #printable-ata {
     display: block !important;
     position: absolute !important;
@@ -2015,7 +2064,7 @@ body.dark-mode #modal-previa-ata button#btn-fechar-previa-top {
     color: #000 !important;
     font-family: Arial, sans-serif !important;
   }
-  
+
   /* Configuração de páginas A4 */
   .print-page {
     page-break-after: always !important;
@@ -2029,16 +2078,18 @@ body.dark-mode #modal-previa-ata button#btn-fechar-previa-top {
     background-color: #fff !important;
     color: #000 !important;
   }
-  
+
   .print-page:last-child {
     page-break-after: avoid !important;
   }
-  
-  .print-page h2, .print-page h3, .print-page h4 {
+
+  .print-page h2,
+  .print-page h3,
+  .print-page h4 {
     margin: 0 !important;
     color: #000 !important;
   }
-  
+
   /* Cabeçalho superior azul PNLD */
   .print-header {
     border-bottom: 2px solid #1351b4 !important;
@@ -2049,47 +2100,47 @@ body.dark-mode #modal-previa-ata button#btn-fechar-previa-top {
     flex-direction: row !important;
     width: 100% !important;
   }
-  
+
   .print-header img {
     height: 40px !important;
     margin-right: 12px !important;
   }
-  
+
   .print-header span {
     font-size: 13px !important;
     font-weight: bold !important;
     color: #555 !important;
   }
-  
+
   .print-title {
     text-align: center !important;
     margin-bottom: 20px !important;
   }
-  
+
   .print-title h2 {
     font-size: 15px !important;
     font-weight: bold !important;
     margin-bottom: 4px !important;
   }
-  
+
   .print-title h3 {
     font-size: 13px !important;
     font-weight: bold !important;
     margin-bottom: 4px !important;
   }
-  
+
   .print-title h4 {
     font-size: 12px !important;
     font-weight: normal !important;
     color: #444 !important;
   }
-  
+
   .print-section {
     margin-bottom: 20px !important;
     font-size: 13px !important;
     line-height: 1.5 !important;
   }
-  
+
   .print-section h4 {
     font-size: 13px !important;
     font-weight: bold !important;
@@ -2098,22 +2149,23 @@ body.dark-mode #modal-previa-ata button#btn-fechar-previa-top {
     padding-bottom: 2px !important;
     text-transform: none !important;
   }
-  
+
   .print-section p {
     margin: 4px 0 !important;
     font-size: 12px !important;
   }
-  
-  .print-section ul, .print-section ol {
+
+  .print-section ul,
+  .print-section ol {
     margin: 0 !important;
     padding-left: 20px !important;
     font-size: 12px !important;
   }
-  
+
   .print-section li {
     margin-bottom: 4px !important;
   }
-  
+
   /* Rodapés de página */
   .print-footer-number {
     position: absolute !important;
@@ -2123,7 +2175,7 @@ body.dark-mode #modal-previa-ata button#btn-fechar-previa-top {
     font-weight: bold !important;
     color: #000 !important;
   }
-  
+
   .print-footer-banner {
     position: absolute !important;
     bottom: 40px !important;
@@ -2257,11 +2309,11 @@ body.dark-mode #modal-previa-ata button#btn-fechar-previa-top {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
 }
 
-.toggle-switch input:checked + .toggle-slider {
+.toggle-switch input:checked+.toggle-slider {
   background-color: #1351b4;
 }
 
-.toggle-switch input:checked + .toggle-slider:before {
+.toggle-switch input:checked+.toggle-slider:before {
   transform: translateX(22px);
 }
 
@@ -2307,11 +2359,13 @@ body.dark-mode #modal-previa-ata button#btn-fechar-previa-top {
 }
 
 .counter-value.selecionado-verde {
-  color: #168821 !important; /* Verde quando algum foi selecionado */
+  color: #168821 !important;
+  /* Verde quando algum foi selecionado */
 }
 
 .counter-value.restante-esgotado {
-  color: #e52207 !important; /* Vermelho quando esgotar o nº restante */
+  color: #e52207 !important;
+  /* Vermelho quando esgotar o nº restante */
 }
 
 /* Grade de Acervos */
@@ -2687,9 +2741,19 @@ body.dark-mode #modal-previa-ata button#btn-fechar-previa-top {
 }
 
 @keyframes shakeSubtleAnim {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-3px); }
-  75% { transform: translateX(3px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-3px);
+  }
+
+  75% {
+    transform: translateX(3px);
+  }
 }
 
 /* Paginação das Obras */
