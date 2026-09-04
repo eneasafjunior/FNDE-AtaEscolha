@@ -173,8 +173,8 @@
                                 do responsável</label>
                             <div class="input-icon-container">
                                 <i class="far fa-id-card input-icon-left"></i>
-                                <input class="form-control" type="text" id="input-cpf-responsavel" value="999.999.99-99"
-                                    placeholder="999.999.99-99">
+                                <input class="form-control" type="text" id="input-cpf-responsavel"
+                                    value="999.999.999-99" placeholder="999.999.999-99" maxlength="14">
                             </div>
                         </div>
                     </div>
@@ -590,9 +590,9 @@
             <div id="step-content-3" class="step-content" style="display: none;">
 
                 <!-- Subtitle and Description -->
-                <div class="step3-header-container">
-                    <h2 class="step3-title">3. Escolha das Obras</h2>
-                    <p class="step3-subtitle">Selecione os acervos. É permitido repetir por quantidade.</p>
+                <div class="mb-5">
+                    <h2 class="subtitle-custom">3. Escolha das Obras</h2>
+                    <p class="subtitle-desc">Selecione os acervos. É permitido repetir por quantidade.</p>
                 </div>
 
                 <!-- CATEGORIA 1 — CRECHE -->
@@ -989,8 +989,8 @@
             <!-- Passo 4: Finalização -->
             <div id="step-content-4" class="step-content" style="display: none;">
                 <div class="mb-5">
-                    <h2 class="subtitle-custom" style="font-size: 24px; font-weight: 500;">4. Finalização</h2>
-                    <p class="subtitle-desc" style="font-size: 14px; color: #666; margin-top: -8px;">Finalize a ata</p>
+                    <h2 class="subtitle-custom">4. Finalização</h2>
+                    <p class="subtitle-desc">Finalize a ata</p>
                 </div>
 
                 <div class="br-card p-4 mb-4">
@@ -1043,8 +1043,10 @@
         <div class="confirm-modal-box modal-detalhes-box">
             <!-- Header do Modal -->
             <div class="d-flex2 justify-content-between align-items-center mb-3 modal-detalhes-header">
-                <h3 class="modal-title" id="modal-detalhes-titulo" style="font-size: 1.35rem; font-weight: bold; color: #1351b4; margin: 0;">Livros do Acervo</h3>
-                <button type="button" id="btn-close-modal-detalhes" class="btn-close-modal-custom" aria-label="Fechar modal">
+                <h3 class="modal-title" id="modal-detalhes-titulo"
+                    style="font-size: 1.35rem; font-weight: bold; color: #1351b4; margin: 0;">Livros do Acervo</h3>
+                <button type="button" id="btn-close-modal-detalhes" class="btn-close-modal-custom"
+                    aria-label="Fechar modal">
                     <i class="fas fa-times" aria-hidden="true"></i>
                 </button>
             </div>
@@ -1160,11 +1162,11 @@
             </div>
 
             <!-- Footer do Modal -->
-            <div class="d-flex2 justify-content-end align-items-center gap-3">
+            <div class="d-flex2 align-items-center gap-2">
                 <button class="br-button text" type="button" id="btn-fechar-previa-bottom"
                     style="color: #1351b4; font-weight: 500; background: transparent; border: none; padding: 8px 16px; cursor: pointer;">Fechar</button>
                 <button class="br-button primary" type="button" id="btn-imprimir-previa"
-                    style="border-radius: 20px; padding: 8px 24px; background-color: #1351b4; color: #fff; font-weight: 500; border: none; cursor: pointer; margin-left: 16px;">Imprimir
+                    style="border-radius: 20px; padding: 8px 24px; background-color: #1351b4; color: #fff; font-weight: 500; border: none; cursor: pointer; margin-left: 8px;">Imprimir
                     / Salvar PDF</button>
             </div>
         </div>
