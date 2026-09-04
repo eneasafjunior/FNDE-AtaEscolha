@@ -425,7 +425,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const minusBtn = card.querySelector('.btn-minus');
             const plusBtn = card.querySelector('.btn-plus');
             const badge = card.querySelector('.acervo-badge');
-            const isNaoIndicado = card.getAttribute('data-badge') === 'nao-indicado';
 
             if (numberSpan) numberSpan.textContent = qty;
 
@@ -443,19 +442,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.classList.add('is-selected');
                     if (badge) {
                         badge.style.display = 'block';
-                        if (!isNaoIndicado) {
-                            badge.className = 'acervo-badge badge-selecionado';
-                            badge.textContent = 'Selecionado';
-                        }
+                        badge.className = 'acervo-badge badge-selecionado';
+                        badge.textContent = 'Selecionado';
                     }
                 } else {
                     card.classList.remove('is-selected');
                     if (badge) {
-                        if (isNaoIndicado) {
-                            badge.style.display = 'block';
-                        } else {
-                            badge.style.display = 'none';
-                        }
+                        badge.style.display = 'none';
                     }
                 }
             }
