@@ -211,6 +211,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const inputCpfResponsavel = document.getElementById('input-cpf-responsavel');
+    if (inputCpfResponsavel) {
+        inputCpfResponsavel.addEventListener('input', (e) => {
+            let v = e.target.value.replace(/\D/g, '');
+            if (v.length > 11) v = v.substring(0, 11);
+            if (v.length > 9) {
+                e.target.value = `${v.substring(0, 3)}.${v.substring(3, 6)}.${v.substring(6, 9)}-${v.substring(9)}`;
+            } else if (v.length > 6) {
+                e.target.value = `${v.substring(0, 3)}.${v.substring(3, 6)}.${v.substring(6)}`;
+            } else if (v.length > 3) {
+                e.target.value = `${v.substring(0, 3)}.${v.substring(3)}`;
+            } else {
+                e.target.value = v;
+            }
+        });
+    }
+
     const btnLimparStep1 = document.getElementById('btn-limpar-dados-step1');
     if (btnLimparStep1) {
         btnLimparStep1.addEventListener('click', () => {
@@ -872,6 +889,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /**
+     * Aplica máscara de proteção de dados sensíveis (LGPD - Lei nº 13.709/2018) no CPF.
+     * Exemplo: 123.***.***-00
+     * @param {string} cpf - CPF com ou sem formatação
+     * @returns {string} CPF mascarado para exibição pública/prévia
+     */
+    function mascararCPF(cpf) {
+        if (!cpf || typeof cpf !== 'string') return 'Não informado';
+        const trimmed = cpf.trim();
+        if (!trimmed) return 'Não informado';
+
+        // Se já estiver mascarado
+        if (/^\d{3}\.\*{3}\.\*{3}-\d{2}$/.test(trimmed)) {
+            return trimmed;
+        }
+
+        const apenasDigitos = trimmed.replace(/\D/g, '');
+
+        if (apenasDigitos.length === 11) {
+            return `${apenasDigitos.substring(0, 3)}.***.***-${apenasDigitos.substring(9, 11)}`;
+        }
+
+        if (apenasDigitos.length === 10) {
+            return `${apenasDigitos.substring(0, 3)}.***.***-${apenasDigitos.substring(8, 10)}`;
+        }
+
+        if (apenasDigitos.length >= 5) {
+            return `${apenasDigitos.substring(0, 3)}.***.***-${apenasDigitos.slice(-2)}`;
+        }
+
+        return trimmed;
+    }
+
     const btnVisualizarAta = document.getElementById('btn-visualizar-ata');
     const modalPreviaAta = document.getElementById('modal-previa-ata');
     const previaAtaContent = document.getElementById('previa-ata-content');
@@ -889,6 +939,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const diretor = document.getElementById('input-diretor') ? document.getElementById('input-diretor').value : '';
             const cpf = document.getElementById('input-cpf-responsavel') ? document.getElementById('input-cpf-responsavel').value : '';
+            const cpfMascarado = mascararCPF(cpf);
             const dataReuniaoVal = document.getElementById('input-data-reuniao') ? document.getElementById('input-data-reuniao').value : '';
             const horaInicioVal = document.getElementById('input-hora-inicio') ? document.getElementById('input-hora-inicio').value : '';
             const horaTerminoVal = document.getElementById('input-hora-termino') ? document.getElementById('input-hora-termino').value : '';
@@ -990,7 +1041,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p style="margin: 4px 0;"><strong>INEP:</strong> 53009720</p>
                     <p style="margin: 4px 0;"><strong>Escola:</strong> CAIC UNESCO - <strong>UF:</strong> DF - <strong>Município:</strong> Brasília</p>
                     <p style="margin: 4px 0;"><strong>Rede:</strong> Estadual - <strong>Dependência:</strong> Pública</p>
-                    <p style="margin: 4px 0;"><strong>Responsável:</strong> ${diretor || 'Não informado'} - <strong>CPF:</strong> ${cpf || 'Não informado'}</p>
+                    <p style="margin: 4px 0;"><strong>Responsável:</strong> ${diretor || 'Não informado'} - <strong>CPF:</strong> ${cpfMascarado}</p>
                     <p style="margin: 4px 0;"><strong>Reunião realizada em:</strong> ${dataReuniaoVal || 'Não informada'}, das ${horaInicioVal || 'Não informada'} às ${horaTerminoVal || 'Não informada'}</p>
                     <p style="margin: 4px 0;"><strong>Participantes:</strong> ${partListStr}</p>
                     <p style="margin: 4px 0; white-space: pre-wrap;"><strong>Processo de escolha:</strong> ${processoEscolhaVal || 'Não informado'}</p>
@@ -1044,6 +1095,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnImprimirPrevia) {
         btnImprimirPrevia.addEventListener('click', () => {
+            const printableAta = document.getElementById('printable-ata');
+            if (printableAta && previaAtaContent) {
+                printableAta.innerHTML = `
+                    <div class="print-page">
+                        <div class="print-header">
+                            <img src="imagens/EN_PNLD_TRINCA 1.svg" alt="PNLD Logo" style="height: 35px; margin-right: 12px;">
+                            <span>PROGRAMA NACIONAL DO LIVRO E DO MATERIAL DIDÁTICO</span>
+                        </div>
+                        ${previaAtaContent.innerHTML}
+                        <div class="print-footer-banner">
+                            Documento gerado eletronicamente em conformidade com as diretrizes do FNDE/MEC e com a LGPD (Lei nº 13.709/2018).
+                        </div>
+                    </div>
+                `;
+            }
             window.print();
         });
     }
